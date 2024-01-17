@@ -145,6 +145,174 @@
       ]
     }
   }
+
+  // Understand types of classification projects
+  // Single label classification models specify a project type of customSingleLabelClassification:
+  {
+  "projectFileVersion": "<API-VERSION>",
+  "stringIndexType": "Utf16CodeUnit",
+  "metadata": {
+    "projectName": "<PROJECT-NAME>",
+    "storageInputContainerName": "<CONTAINER-NAME>",
+    "projectKind": "customSingleLabelClassification",
+    "description": "Trying out custom multi label text classification",
+    "language": "<LANGUAGE-CODE>",
+    "multilingual": true,
+    "settings": {}
+  },
+  "assets": {
+    "projectKind": "customSingleLabelClassification",
+        "classes": [
+            {
+                "category": "Class1"
+            },
+            {
+                "category": "Class2"
+            }
+        ],
+        "documents": [
+            {
+                "location": "<DOCUMENT-NAME>",
+                "language": "<LANGUAGE-CODE>",
+                "dataset": "<DATASET>",
+                "class": {
+                    "category": "Class2"
+                }
+            },
+            {
+                "location": "<DOCUMENT-NAME>",
+                "language": "<LANGUAGE-CODE>",
+                "dataset": "<DATASET>",
+                "class": {
+                    "category": "Class1"
+                }
+            }
+        ]
+    }
+}
+
+{
+  "projectFileVersion": "<API-VERSION>",
+  "stringIndexType": "Utf16CodeUnit",
+  "metadata": {
+    "projectName": "<PROJECT-NAME>",
+    "storageInputContainerName": "<CONTAINER-NAME>",
+    "projectKind": "customMultiLabelClassification",
+    "description": "Trying out custom multi label text classification",
+    "language": "<LANGUAGE-CODE>",
+    "multilingual": true,
+    "settings": {}
+  },
+  "assets": {
+    "projectKind": "customMultiLabelClassification",
+    "classes": [
+      {
+        "category": "Class1"
+      },
+      {
+        "category": "Class2"
+      }
+    ],
+    "documents": [
+      {
+        "location": "<DOCUMENT-NAME>",
+        "language": "<LANGUAGE-CODE>",
+        "dataset": "<DATASET>",
+        "classes": [
+          {
+            "category": "Class1"
+          },
+          {
+            "category": "Class2"
+          }
+        ]
+      },
+      {
+        "location": "<DOCUMENT-NAME>",
+        "language": "<LANGUAGE-CODE>",
+        "dataset": "<DATASET>",
+        "classes": [
+          {
+            "category": "Class2"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+//
+{
+  "projectFileVersion": "{DATE}",
+  "stringIndexType": "Utf16CodeUnit",
+  "metadata": {
+    "projectKind": "CustomEntityRecognition",
+    "storageInputContainerName": "{CONTAINER-NAME}",
+    "projectName": "{PROJECT-NAME}",
+    "multilingual": false,
+    "description": "Project-description",
+    "language": "en-us",
+    "settings": {}
+  },
+  "assets": {
+    "projectKind": "CustomEntityRecognition",
+    "entities": [
+      {
+        "category": "Entity1"
+      },
+      {
+        "category": "Entity2"
+      }
+    ],
+    "documents": [
+      {
+        "location": "{DOCUMENT-NAME}",
+        "language": "{LANGUAGE-CODE}",
+        "dataset": "{DATASET}",
+        "entities": [
+          {
+            "regionOffset": 0,
+            "regionLength": 500,
+            "labels": [
+              {
+                "category": "Entity1",
+                "offset": 25,
+                "length": 10
+              },
+              {
+                "category": "Entity2",
+                "offset": 120,
+                "length": 8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "location": "{DOCUMENT-NAME}",
+        "language": "{LANGUAGE-CODE}",
+        "dataset": "{DATASET}",
+        "entities": [
+          {
+            "regionOffset": 0,
+            "regionLength": 100,
+            "labels": [
+              {
+                "category": "Entity2",
+                "offset": 20,
+                "length": 5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
 }
+}
+
+
+
 
