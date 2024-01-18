@@ -30,3 +30,21 @@ dataset = pandas.DataFrame(data)
 # but in Jupyter notebooks, we simply write the name
 # of the variable and it is printed nicely 
 dataset
+
+
+
+# Create a model 
+# Load a library to do the hard work for us
+import statsmodels.formula.api as smf
+
+# First, we define our formula using a special syntax
+# This says that boot_size is explained by harness_size
+formula = "boot_size ~ harness_size"
+
+# Create the model, but don't train it yet
+model = smf.ols(formula = formula, data = dataset)
+
+# Note that we have created our model but it does not 
+# have internal parameters set yet
+if not hasattr(model, 'params'):
+    print("Model selected but it does not have parameters set. We need to train it!")
