@@ -17,3 +17,12 @@ var options = new ImageAnalysisOptions()
 using var analyzer = new ImageAnalyzer(serviceOptions, imageSource, options);
 
 var result = analyzer.Analyze();
+
+
+
+
+# To make an OCR REQUEST TO IMAGE ANANLYSIS
+var analysisOptions = new ImageAnalysisOptions()
+{
+    Features = ImageAnalysisFeature.Text,
+};
